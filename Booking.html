@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="Style3.css">
+      <title>Hotel Reservation Form</title>
+      
+   </head>
+   <!--Navigation bar-->
+   <header>
+      <img class="logo" src="logo2.png" alt="logo">
+      <nav class="nav">
+         <!--ordered list-->
+         <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+               <a href="Branches.html">Branches</a>
+               <!--unordered list-->
+               <ul class="dropdown-content">
+                  <li><a href="branches.html#linkit">Galle</a></li>
+                  <li><a href="branches.html#linkit2">Puttalam</a></li>
+                  <li><a href="branches.html#linkit3">Colombo</a></li>
+               </ul>
+            </li>
+            <li><a href="Restaurants.html">Dine in</a></li>
+            <li><a href="Adventure.html">Explore</a></li>
+            <li><a href="Booking.html">Book</a></li>
+            <li><a href="myFav.html">My Favourite</a></li>
+         </ol>
+      </nav>
+   </header>
+   <body>
+      <!-- Confirmation Modal -->
+      <div id="confirmModal" class="confirm-modal">
+         <h2>Are you sure you want to book this adventure?</h2>
+         <button id="confirmButton" class="primary">Confirm</button>
+         <button id="cancelButton" class="secondary">Cancel</button>
+      </div>
+      <div id="confirmModal2" class="confirm-modal">
+         <h2>Thank you for choosing RDn Hotel!</h2>
+         <button id="confirmButton2" class="primary">Get The Invoice</button>
+         <!-- <button id="cancelButton2" class="secondary">Cancel</button> -->
+      </div>
+      <div id="sidebar">
+         <h1>My Favorites</h1>
+         <div id="myFavourite"></div>
+      </div>
+      <button id="toggleButton" onclick="toggleSidebar()">Toggle Sidebar</button>
+      <!-- checkAvailability -->
+      <div class="checkAvailability">
+         <h1>Check Availability</h1>
+         <form>
+            <label for="hotel">Hotel:</label>
+            <select id="hotel" name="hotel">
+              
+              <option value="single">Galle</option>
+              <option value="double">Puttalam</option>
+              <option value="triple">Colombo</option>
+           </select>
+          
+            <br>
+            <label for="checkinDate">Check-in Date:</label>
+            <input type="date" id="checkInDateField" name="checkinDate" required>
+            <br>
+            <label for="checkoutDate">Check-out Date:</label>
+            <input type="date" id="checkOutDateField" name="checkoutDate" required>
+            <br>
+            <br>
+            <button type="submit" onclick="scrollToAvaRooms()">Submit</button>
+         </form>
+      </div>
+      <!-- Available Rooms -->
+      <h1 id="availableRooms">Available Rooms</h1>
+      <div id="availableRooms">
+         <div class="card" >
+            <div class="pic1" onclick="roomDetails()" >
+               <img src="StandardRoom.webp" alt="Hotel Room 1">
+               <h2>Standard Room</h2>
+               <p>
+                  Reserve your comfortable single-room suite today for a pleasant and peaceful stay throughout your vacation
+               </p>
+            </div>
+            <!-- <button class="favorite-button">Add to Favourite</button> -->
+            <button class="favorite-button" onclick="addToFavourites(this)">Add to Favourite</button>
+         </div>
+         <div class="card" >
+            <div class="pic2" onclick="roomDetails()" >
+               <img src="double.webp" alt="Hotel Room 2">
+               <h2>Deluxe Room</h2>
+               <p>
+                  Relax in a new level of luxury with our deluxe room, designed to provide incomparable luxury and ease during your stay.
+               </p>
+            </div>
+            <button class="favorite-button" onclick="addToFavourites(this)">Add to Favourite</button>
+         </div>
+         <div class="card" >
+            <div class="pic3" onclick="roomDetails()">
+               <img src="Queen.jpg" alt="Hotel Room 3">
+               <h2>Queen Queen Room</h2>
+               <p>
+                  Experience royal luxury and comfort in our enormous queen room, perfect for a restful and luxurious stay during your visit
+               </p>
+            </div>
+            <button class="favorite-button" onclick="addToFavourites(this)">Add to Favourite</button>
+         </div>
+      </div>
+      <!-- Room Deatails -->
+      <div class="roomDetails">
+         <form id="roomDetailsForm">
+            <p><i>Room Details</i></p>
+            <div id="selectedRoomImage"></div>
+            <label for="rooms">Rooms:</label>
+            <select id="rooms" name="rooms">
+               
+               <option value="single">Single</option>
+               <option value="double">Double</option>
+               <option value="triple">Triple</option>
+            </select>
+            <br>
+            <label for="age"> Kids above 5 years old?</label>
+            <input type="checkbox" id="age" name="age" value="yes">
+            <br>
+            <label for="age"> Extra Bed?</label>
+            <input type="checkbox" id="bed" name="bed" value="yes">
+            <br>
+            <label for="total">Total:</label>
+            <input type="text" id="total" name="total" class="custom-select">
+            <br>
+            <button type="button" onclick="submitRoomDetails()">Calculate</button>
+            <br><br>
+            <button type="button" onclick="adventure()">Go To</button>
+         </form>
+      </div>
+      <!-- Adventures -->
+      <div id="adventures">
+         <div class="cardAdventure">
+            <img src="diving2.png" alt="diving">
+            <h2>Adventure Detail</h2>
+            <p>
+            <ul>
+               <li>Diving for local Adults (1 hr) : 5000LKR</li>
+               <li>Diving for local kids (above 5 years): 2000LKR</li>
+               <li>Diving for foreign adults: 10000LKR</li>
+               <li>Diving for foreign kids: 5000LKR</li>
+            </ul>
+            </p>
+            <h2>If in need for a guide during the diving session</h2>
+            <ul>
+               <li>
+                  Adult – 1000LKR extra will be charged
+               </li>
+               <li>Kids – 500LKR extra will be charged</li>
+            </ul>
+            <button class="favorite-button" onclick="confirmBookAdventure()">Book Adventure</button>
+         </div>
+      </div>
+      <!-- customer details -->
+      <div id="cusdetails">
+         <h1 id="customerdetails">Customer Details</h1>
+         <form action="submit_form.php" method="post">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            <br>
+            <label for="address">Address:</label>
+            <br>
+            <textarea id="address" name="address" rows="3"  required></textarea>
+            <br>
+            <label for="isSriLankan">Are you Sri Lankan?</label>
+            <div>
+               <input type="radio" id="yes" name="isSriLankan" value="yes">
+               <label for="yes">Yes</label>
+            </div>
+            <div>
+               <input type="radio" id="no" name="isSriLankan" value="no">
+               <label for="no">No</label>
+            </div>
+            <br>
+            <label for="numRooms">Number of Rooms:</label>
+            <input type="number" id="numRooms" name="numRooms" min="0">
+            <label for="numAdults">Number of Adults:</label>
+            <input type="number" id="numAdults" name="numAdults" min="0">
+            <label for="numKids">Number of Kids:</label>
+            <input type="number" id="numKids" name="numKids" min="0">
+            <br>
+            <label for="adven"> Doing Adventure?</label>
+            <input type="checkbox" id="adven" name="adven" value="yes">
+            <br>
+            <label for="guide">Do you need guide?</label>
+            <div>
+               <input type="radio" id="yes" name="guide" value="yes">
+               <label for="yes">Yes</label>
+            </div>
+            <div>
+               <input type="radio" id="no" name="guide" value="no">
+               <label for="no">No</label>
+            </div>
+            <br>
+            <label for="promocode">Promocode:</label>
+            <input type="text" id="promocode" name="promocode" ><br>
+            <label for="specialRequest">Special Request:</label>
+            <br>
+            <textarea id="specialRequest" name="specialRequest" rows="4"></textarea>
+            <br>
+            <button type="button" onclick="confirmBooking()">Book Now</button>
+         </form>
+      </div>
+      </div>
+      <!-- Invoice -->
+      <h1 id="invoice">Invoice</h1>
+      <div  id="invoice">
+         <form>
+            <div class="thank">
+               <p >
+                  Thank you for choosing RDn Hotel for your stay; we're excited to ensure you have a lovely and pleasant stay during your time with us!!!
+               </p>
+            </div>
+            <label for="fullName">Full Name:</label>
+            <span class="ispan" id="invoiceFullName"></span>
+            <br>
+            <label for="email">Email:</label>
+            <span class="ispan" id="invoiceEmail"></span>
+            <br>
+            <label for="phoneNumber">PhoneNumber:</label>
+            <span class="ispan" id="invoicePhoneNumber"></span>
+            <br>
+            <label for="address">Address:</label>
+            <span class="ispan" id="invoiceAddress"></span>
+            <br>
+            <label for="isSriLankan ">SriLankan</label>
+            <span class="ispan" id="invoiceIsSriLankan"></span>
+            <br>
+         
+            <label for="Noadult">Number Of Adult:</label>
+            <input type="text" id="Noadult" name="Noadult">
+            <br>
+            <label for="Nokids">Number Of Kids:</label>
+            <input type="text" id="Nokids" name="Nokids">
+            <br>
+            <label for="specialRequest ">Special Request: </label>
+            <span class="ispan" id="invoiceSpecialRequest"></span>
+            <br>
+            <label for="divingCost">Diving Cost:</label>
+            <input type="text" id="divingCost" name="divingCost">
+            <br>
+            <label for="guideCost">Guide Cost:</label>
+            <input type="text" id="guideCost" name="guideCost">
+            <br>
+            <label for="adCost">Adventure Cost:</label>
+            <input type="text" id="adCost" name="adCost">
+            <br>
+            <label for="roomCost">Room Cost:</label>
+            <input type="text" id="roomCost" name="roomCost">
+            <br>
+            <label for="discount">Discount: </label>
+            <input type="text" id="discount" name="discount">
+            <br>
+            <hr>
+            <br>
+            <label for="Final">Total Payment:</label>
+            <input type="text" id="Final" name="Final">
+         </form>
+      </div>
+
+
+      <!-- loyalty Ponits -->
+      <div id="loyalty">
+        <div id="invoice">
+          <h1> Earn Loyalty Points</h1>
+          <button onclick="checkLoyalty()">Check Your Loyalty Points</button>
+        </div>
+      </div>
+
+      <!-- Custom Modal for Loyalty Points -->
+<div id="loyaltyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeLoyaltyModal()">&times;</span>
+    <p id="loyaltyPointsMessage"></p>
+  </div>
+</div>
+    
+      <!--Footer-->
+      <footer class="ft">
+         <div class="footercontainer">
+            <div class="footerbottom">
+               <p>&copy;Copyright 2023;Designed by<span class="designer"> Rafdha Najeeb</span>
+               </p>
+            </div>
+         </div>
+      </footer>
+      <script src="main.js"></script>
+   </body>
+</html>

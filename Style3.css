@@ -1,0 +1,602 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #fbf4ec, #f3e3b3);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* display: flex; */
+    /* align-items: center;
+      justify-content: center; */
+  
+  
+  }
+  
+  /*Navigation bar*/ li,
+  a {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #3F2305;
+    text-decoration: none;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+  }
+  
+  
+  .nav {
+    justify-content: flex-end;
+    background-color: transparent;
+  
+  }
+  
+  
+  .logo {
+    width: 250px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  .nav ol {
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  .nav li {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #3F2305;
+  }
+  
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3F2305;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown-content li {
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: antiquewhite;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #CA965C;
+  }
+  
+  
+  /* ---------------Footer---------------- */
+  
+  .footercontainer {
+    width: 100%;
+    padding: 70px 30px 20px;
+  }
+  
+  
+  .footerbottom {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footerbottom p {
+    color: black;
+  }
+  
+  .designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+  }
+  
+  /* ----------------heading---------------- */
+  h1 {
+  
+    padding: 10px;
+  
+  }
+  
+  
+  /* --------------------sidebar-------------------- */
+  #sidebar {
+    width: 250px;
+    background: linear-gradient(to right, #fbf4ec, #fef7e3);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    border-left: 1px solid #ddd;
+    transition: 0.3s;
+  }
+  
+  #myFavourite {
+    margin-bottom: 20px;
+  }
+  
+  #toggleButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .sidebar-hidden {
+    display: none;
+  }
+  
+  .remove-button {
+    cursor: pointer;
+    color: red;
+  }
+  
+  
+  /* ----------------check Availability------------ */
+  .checkAvailability {
+    background: linear-gradient(to bottom, #ffffff, #efe4c9);
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkAvailability h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .checkAvailability form {
+    margin-top: 20px;
+  }
+  
+  .checkAvailability label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .checkAvailability input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+  }
+  
+  .checkAvailability button {
+    background-color: #DFA878;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .custom-select {
+    width: 100px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    form {
+      padding: 20px;
+    }
+  }
+  
+  
+  /* Room Availabity */
+  
+  
+  #availableRooms {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #fbf4ec, #f9f0d6);
+    margin: 0px 80px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    max-width: 300px;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .favorite-button {
+    background-color: #C8AE7D;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  h1#availableRooms {
+    text-align: center;
+  }
+  
+  /* -----------------room details----------------- */
+  .roomDetails {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(to bottom, #ffffff, #efe4c9);
+  
+    border: 0px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .roomDetails p {
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Afacad', sans-serif;
+    background-color: #493c23;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  
+  #selectedRoomImage {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #roomDetailsForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  #roomDetailsForm select,
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+  
+  #roomDetailsForm button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  #roomDetailsForm button:first-of-type {
+    background-color: #DFA878;
+  }
+  
+  #roomDetailsForm button:last-of-type {
+    background-color: #99704c;
+  }
+  
+  /* --------------------Adevntures------------------ */
+  #adventures {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #fbf4ec, #f9f0d6);
+    margin: 10px 60px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  
+  .cardAdventure {
+    background: linear-gradient(to bottom, #fffdf8, #efe4c9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 40px;
+    width: 900px;
+  
+  
+  }
+  
+  .cardAdventure img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* -------------customer details--------- */
+  
+  #cusdetails {
+    /* max-width: 600px;
+          margin: auto; */
+    width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(to bottom, #ffffff, #efe4c9);
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #customerdetails {
+    text-align: center;
+    color: #333;
+  }
+  
+  #cusdetails form {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  #cusdetails label {
+    /* display: block; */
+    margin-bottom: 5px;
+  }
+  
+  #cusdetails input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  #cusdetails input[type="checkbox"],
+  input[type="radio"] {
+    margin-bottom: 10px;
+  }
+  
+  #cusdetails button {
+    background-color: #DFA878;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  
+  /* invove */
+  
+  #invoice {
+    /* max-width: 600px;
+          margin: auto; */
+    width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(to bottom, #ffffff, #efe4c9);
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #invoice label {
+    display: block;
+    margin: 15px 0;
+  
+  }
+  
+  #invoice input {
+    width: 80%;
+    background-color: #d5beaa;
+    border: none;
+  
+  
+  }
+  
+   .ispan{
+    background-color: #d5beaa;
+    padding: 10px ;
+    width: 80%;
+    height: 30px;
+    display: inline-block;
+   
+    
+   
+  }
+  
+  .thank p {
+    font-family: 'Afacad', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    background-color: #5a432f;
+    padding: 20px;
+    letter-spacing: 2px;
+    line-height: 25px;
+    margin: 10px 0 80px 0;
+    border-radius: 10px;
+  
+  }
+  
+  /*Customer details*/ h1#customerdetails {
+    text-align: center;
+  }
+  
+  /*Invoice*/ h1#invoice {
+    text-align: center;
+  }
+  
+  
+  /* Style for the confirmation modal */
+  .confirm-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 0px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .confirm-modal h2 {
+    margin-bottom: 10px;
+  }
+  
+  .confirm-modal button {
+    padding: 8px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .confirm-modal button.primary {
+    background-color: #DFA878;
+    color: #fff;
+    border: none;
+  }
+  
+  .confirm-modal button.secondary {
+    background-color: #DFA878;
+    color: #ffffff;
+    border: none;
+  }
+  
+  /* loyalty points */
+  /* Style for Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 400px;
+    height: 160px;
+    font-size: 18px;
+    
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #loyaltyPointsMessage{
+    background-color: #d98a00;
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 20px;
+    margin: 25px 0px;
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: white;
+  
+  }
+  
+  
+  #loyalty button {
+    background-color: #DFA878;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+  }
+  @media screen and (max-width: 768px) {
+      #cusdetails {
+        width: 90%;
+        margin: 50px auto;
+        padding: 20px;
+      }
+      
+      #cusdetails input[type="text"],
+      #cusdetails input[type="email"],
+      #cusdetails input[type="tel"],
+      #cusdetails input[type="number"],
+      #cusdetails textarea,
+      #cusdetails select {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+      
+      #cusdetails button {
+        padding: 10px;
+      }
+    }
+  
+    @media screen and (max-width: 768px) {
+      #invoice {
+        width: 90%;
+        margin: 50px auto;
+        padding: 20px;
+      }
+      
+      #invoice input[type="text"] {
+        width: calc(100% - 16px); /* Adjust for input padding */
+        padding: 6px;
+      }
+    }
+  
